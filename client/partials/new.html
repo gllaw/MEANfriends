@@ -1,0 +1,35 @@
+<!-- You will attach an ng-model and an ng-submit to your forms (but might want to wait until the next tab, when you have your controllers and factory) -->
+<h1>Create Friends!</h1>
+<form ng-submit="create()">
+  <div>
+    <label>Enter your friend's name!</label>
+    <input ng-model="newFriend.name" />
+  </div>
+
+  <div>
+    <label>Enter your friend's favorite language!</label>
+    <input ng-model="newFriend.favoriteLanguage" />
+  </div>
+
+  <input type="submit" value="Create Friend">
+</form>
+<br>
+<table>
+	<thead>
+		<th>Name:</th>
+		<th>Show:</th>
+		<th>Update:</th>
+		<th>Delete:</th>
+	</thead>
+	<tr ng-repeat='friend in friends | filter:searchText'>
+		<td>{{friend.name}}</td>
+		<td><a href="#/show/{{friend._id}}">Show</a></td>
+		<td><a href="#/edit/{{friend._id}}">Edit</a></td>
+		<td><form ng-submit='delete(friend._id)'><input type="submit" value="Delete"></form></td>
+	</tr>
+</table>
+<hr>
+<h2>Search Friends: </h2>
+      <label>All: <input type="text" ng-model="searchText.$"></label><br>
+      <label>Name only: <input ng-model="searchText.name"></label><br>
+      <label>Favorite Language only: <input ng-model="searchText.favoriteLanguage"></label>

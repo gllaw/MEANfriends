@@ -1,0 +1,8 @@
+<h1>{{friend.name}}'s Page</h1>
+<!-- {{friend._id}} -->
+<p>Name: {{friend.name}}</p>
+<p>Favorite Language: {{friend.favoriteLanguage}}</p>
+<p>Joined: {{friend.createdAt}}</p>
+<a href="#/edit/{{friend._id}}">Edit</a> | 
+<a href="" ng-click="delete(friend._id)">Delete</a>
+<!-- <form ng-submit='delete(friend._id)'><input type="submit" value="Delete"></form> -->

@@ -1,0 +1,7 @@
+<h1>Edit Friends!</h1>
+<!-- {{friend._id}} -->
+<form ng-submit='updateFriend()'>
+  	Name: <input type="text" ng-model="editedFriend.name" placeholder="{{friend.name}}"><br>
+  	Favorite Language: <input type="text" ng-model="editedFriend.favoriteLanguage" placeholder="{{friend.favoriteLanguage}}"><br>
+  <input type='submit' value="Edit">
+</form>
